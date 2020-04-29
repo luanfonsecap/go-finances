@@ -1,9 +1,12 @@
-<h4 align="center">
+<h1 align="center">
   <img alt="Go Finances" src="https://raw.githubusercontent.com/luanfonsecap/go-finances/7b005665469bea9f5a4d8697c5591373bd6843cc/assets/logo.svg" />
-  
-  <br><br>
-  
-  <img alt="License MIT" src="https://img.shields.io/badge/license-MIT-orange">
+  <br>
+  Go Finances
+</h1>
+
+<p align="center">
+ 
+   <img alt="License MIT" src="https://img.shields.io/badge/license-MIT-orange">
   
   <img alt="TypeScript Language" src="https://img.shields.io/badge/typescript-78%25-orange">
   
@@ -12,10 +15,14 @@
   <a href="https://app.codacy.com/manual/luanfonsecap/go-finances/dashboard">
     <img alt="Code Quality" src="https://api.codacy.com/project/badge/Grade/476dcda07b5d4cb2a49d1a92e2f94a03" />
   </a>
-</h4>
-
----
-:sparkles: Projeto desenvolvido durante o Bootcamp GoStack 11 da [Rocketseat](https://github.com/Rocketseat). 
+ 
+  <br>
+  
+  <p align="center">
+    :sparkles: Projeto desenvolvido durante o Bootcamp GoStack 11 da <a href="https://github.com/Rocketseat">Rocketseat</a>.
+  </p>
+  <br>
+</p>
 
 
 # :muscle: O Projeto
