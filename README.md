@@ -1,0 +1,2 @@
+# go-finances
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/476dcda07b5d4cb2a49d1a92e2f94a03)](https://app.codacy.com/manual/luanfonsecap/go-finances?utm_source=github.com&utm_medium=referral&utm_content=luanfonsecap/go-finances&utm_campaign=Badge_Grade_Dashboard)
