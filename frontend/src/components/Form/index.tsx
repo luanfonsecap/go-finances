@@ -22,6 +22,11 @@ const Form: React.FC = () => {
 			type,
 			category
 		});
+
+		setTitle('');
+		setValue('');
+		setType('');
+		setCategory('');
 	};
 
 	return (
