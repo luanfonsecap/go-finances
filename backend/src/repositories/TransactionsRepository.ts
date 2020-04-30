@@ -1,4 +1,7 @@
+import { EntityRepository, Repository } from 'typeorm';
+
 import Transaction from '../models/Transaction';
+import AppError from '../errors/AppError';
 
 interface Balance {
   income: number;
@@ -6,29 +9,19 @@ interface Balance {
   total: number;
 }
 
-class TransactionsRepository {
-  private transactions: Transaction[];
+@EntityRepository(Transaction)
+class TransactionsRepository extends Repository<Transaction> {
+  public async getBalance(): Promise<Balance> {
+    const transactions = await this.find();
 
-  constructor() {
-    this.transactions = [];
-  }
-
-  public all(): Transaction[] {
-    const { transactions } = this;
-
-    return transactions;
-  }
-
-  public getBalance(): Balance {
-    const balance = this.transactions.reduce(
-      (acc, current): Balance => {
-        if (current.type === 'income') {
-          acc.income += current.value;
+    const balance = transactions.reduce(
+      (acc, currrent) => {
+        if (currrent.type === 'income') {
+          acc.income += currrent.value;
         }
-        if (current.type === 'outcome') {
-          acc.outcome += current.value;
+        if (currrent.type === 'outcome') {
+          acc.outcome += currrent.value;
         }
-
         acc.total = acc.income - acc.outcome;
 
         return acc;
@@ -37,18 +30,6 @@ class TransactionsRepository {
     );
 
     return balance;
-  }
-
-  public create(transaction: Transaction): Transaction {
-    const balance = this.getBalance();
-
-    if (transaction.type === 'outcome' && transaction.value > balance.total) {
-      throw Error('Insufficient balance');
-    }
-
-    this.transactions.push(transaction);
-
-    return transaction;
   }
 }
 
