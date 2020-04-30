@@ -1,66 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { format } from 'date-fns';
 
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
 
-import api from '../../services/api';
 
 import Header from '../../components/Header';
-
+import Form from '../../components/Form';
 import formatValue from '../../utils/formatValue';
+import { useTransactions } from '../../hooks/transactions';
 
 import { Container, CardContainer, Card, TableContainer } from './styles';
 
-interface Transaction {
-  id: string;
-  title: string;
-  value: number;
-  formattedValue: string;
-  formattedDate: string;
-  type: 'income' | 'outcome';
-  category: { title: string };
-  created_at: Date;
-}
-
-interface Balance {
-  income: string;
-  outcome: string;
-  total: string;
-}
-
-interface Response {
-  transactions: Transaction[];
-  balance: Balance;
-}
-
 const Dashboard: React.FC = () => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [balance, setBalance] = useState<Balance>({} as Balance);
+  const { loadTransactions, transactions, balance } = useTransactions();
 
   useEffect(() => {
-    async function loadTransactions(): Promise<void> {
-      const response = await api.get<Response>('transactions');
-
-      const formattedTransactions = response.data.transactions.map(item => {
-        const formattedDate = format(new Date(item.created_at), 'dd/mm/yyyy');
-        const formattedValue = formatValue(item.value);
-
-        const newItem = { ...item, formattedValue, formattedDate };
-        return newItem;
-      });
-
-      const formattedBalance = {
-        income: response.data.balance.income.toString(),
-        outcome: response.data.balance.outcome.toString(),
-        total: response.data.balance.total.toString(),
-      };
-
-      setBalance(formattedBalance);
-      setTransactions(formattedTransactions);
-    }
-
     loadTransactions();
   }, []);
 
@@ -97,6 +52,8 @@ const Dashboard: React.FC = () => {
             </h1>
           </Card>
         </CardContainer>
+
+        <Form />
 
         <TableContainer>
           <table>

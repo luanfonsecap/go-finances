@@ -48,7 +48,7 @@ export const Card = styled.div`
 `;
 
 export const TableContainer = styled.section`
-  margin-top: 64px;
+  margin-top: 34px;
 
   table {
     width: 100%;
