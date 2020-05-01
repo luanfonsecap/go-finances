@@ -63,6 +63,7 @@
 ## :rocket: Rodando o Projeto
 
 É necessário ter o ambiente [Node](https://nodejs.org/en/download/) instalado.
+É necessário alterar o arquivo ormconfig.json para uma base de dados local.
 Para rodar o projeto clone o repositório e execute os comandos abaixo:
 
 ```
