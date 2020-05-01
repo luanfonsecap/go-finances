@@ -29,7 +29,7 @@
 
 **Go Finances** Go Finances é uma aplicação web para listagem de finanças e comparação de entradas e saídas das transações realizadas, todos os dados são armezanados em um backend API Rest.
 
-<img alt="Example" src="https://github.com/luanfonsecap/go-finances/blob/master/assets/example.png?raw=true"/> 
+<img alt="Example" src="https://github.com/luanfonsecap/go-finances/blob/master/assets/dashboard.png?raw=true"/> 
 
 <br>
 
