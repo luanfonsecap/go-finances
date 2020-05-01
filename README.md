@@ -82,8 +82,8 @@ Se não tiver o [Yarn](https://yarnpkg.com/) pode-se utilizar o NPM.
 
 ## :bicyclist: Roadmap
 
-- [ ] Adicionar base de dados 
-- [ ] Criar função de adicionar transação por formulário
+- [x] Adicionar base de dados 
+- [x] Criar função de adicionar transação por formulário
 
 <br>
 
